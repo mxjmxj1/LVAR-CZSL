@@ -1,0 +1,41 @@
+experiment:
+  name: cgqa/best
+dataset:
+  data_dir: cgqa
+  dataset: cgqa
+  splitname: compositional-split-natural
+model_params:
+  model: LVAR
+  emb_dim: 300
+  emb_init: word2vec
+  image_extractor: Wave-MLP
+  train_only: true
+MLP:
+  obj_fclayers: 2
+  obj_emb: [ 600,1024 ]
+  attr_fclayers: 2
+  attr_emb: [ 600,512 ]
+  pair_fclayers: 2
+  pair_emb: [ 600,512 ]
+  dropout: true
+  norm: true
+  relu: true
+Encoder:
+  obj_nlayer: 3
+  attr_nlayer: 3
+  obj_nhead: 2
+  attr_nhead: 2
+training:
+  batch_size: 128
+  eval_val_every: 1
+  lr: 0.00002
+  wd: 5.0e-05
+  lrg: 5.0e-6 # Learning rete for image backbone if fine-tune the backbone
+  alpha: 0.3
+  beta: 0.6
+  max_epochs: 50
+  test_batch_size: 32
+  test_set: val
+  topk: 1
+  workers: 8
+  update_features: True # Fine tune the image backbone
