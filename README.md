@@ -6,13 +6,14 @@ This is the official PyTorch code for the paper:
 
 ***IEEE Transactions on Circuits and Systems for Video Technology***
 
-**Xingjiang Ma**, **Jing Yang***, **Jiacheng Lin**, **Zhenzhe Zheng**, **Shaobo Li**, **Bingqi Hu and Xianghong Tang**
+**Xingjiang Ma**, **Jing Yang***, **Jiacheng Lin**, **Zhenzhe Zheng**, **Shaobo Li**, **Bingqi Hu and Xianghong Tang**.
 
 [**Paper **](https://ieeexplore.ieee.org/document/10638107)**|**[**Code**](https://github.com/mxjmxj1/LVAR-CZSL)
 
 <p align="center">
   <img src="img/Model.png"alt="" align=center />
 </p>
+
 
 ## Setup
 
