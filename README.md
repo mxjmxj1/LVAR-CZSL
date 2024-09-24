@@ -1,4 +1,4 @@
-# AOGN-CZSL: an Attributes and Objects Guided Network for Compositional Zero-Shot Learning
+# LVAR-CZSL: Learning Visual Attributes Representation for Compositional Zero-Shot Learning
 
 This is the official PyTorch code for the paper:
 
