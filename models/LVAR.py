@@ -51,7 +51,7 @@ class LVAR(nn.Module):
         self.obj_embeddings = obj_embeddings.unsqueeze(0)
         self.attr_embeddings = attr_embeddings.unsqueeze(0)
 
-        '''====================== Encoder_attr_obj ======================'''
+        '''====================== VARM_attr_obj ======================'''
         '''Encoder-obj'''
         obj_encoder_layer = nn.TransformerEncoderLayer(d_model=args.emb_dim, nhead=args.obj_nhead)
         obj_transformer_encoder = nn.TransformerEncoder(obj_encoder_layer, num_layers=args.obj_nlayer)
@@ -60,8 +60,7 @@ class LVAR(nn.Module):
         attr_encoder_layer = nn.TransformerEncoderLayer(d_model=args.emb_dim, nhead=args.attr_nhead)
         attr_transformer_encoder = nn.TransformerEncoder(attr_encoder_layer, num_layers=args.attr_nlayer)
         self.trans_attr = attr_transformer_encoder
-
-        '''====================== VARM_attr_obj ======================'''
+        
         self.Attr_Extractor = VARM(512, 512).to(device)
         self.Obj_Extractor = VARM(512, 512).to(device)
 
