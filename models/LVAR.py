@@ -25,7 +25,7 @@ class LVAR(nn.Module):
                 train_idx.append(dataset.all_pair2idx[current]+self.num_attrs+self.num_objs)
             self.train_idx = torch.LongTensor(train_idx).to(device)
 
-        '''====================== boj, attr, pair MLP ======================'''
+        '''====================== boj, attr, pair MLP-head ======================'''
         self.obj_head = MLP(dataset.feat_dim, args.emb_dim, num_layers=args.obj_fclayers, relu=args.relu,
                             dropout=args.dropout, norm=args.norm, layers=args.obj_emb)
         self.attr_head = MLP(dataset.feat_dim, args.emb_dim, num_layers=args.attr_fclayers, relu=args.relu,
@@ -61,7 +61,7 @@ class LVAR(nn.Module):
         attr_transformer_encoder = nn.TransformerEncoder(attr_encoder_layer, num_layers=args.attr_nlayer)
         self.trans_attr = attr_transformer_encoder
 
-        '''====================== FRM_attr_obj ======================'''
+        '''====================== VARM_attr_obj ======================'''
         self.Attr_Extractor = VARM(512, 512).to(device)
         self.Obj_Extractor = VARM(512, 512).to(device)
 
